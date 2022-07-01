@@ -7,6 +7,7 @@
 library('rvest')
 library('dplyr')
 library('stringr')
+library('rtweet')
 
 
 ###
@@ -74,6 +75,9 @@ if(nrow(jazz) != 0) {
                     "\nTOV% adv: ", ifelse(tov > 0, paste("+", tov, sep=""), tov), 
                     "\nOREB% adv: ", ifelse(oreb > 0, paste("+", oreb, sep=""), oreb), 
                     "\nFTArate adv: ", ifelse(ftr > 0, paste("+", ftr, sep=""), ftr), 
+                    "\n\n#TakeNote #rtweet", 
                     sep ="")
 }
 
+
+rtweet::post_tweet(tweetText)
